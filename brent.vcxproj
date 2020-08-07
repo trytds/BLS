@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="big.h" />
+    <ClInclude Include="bls.h" />
     <ClInclude Include="ec2.h" />
     <ClInclude Include="ecdh.h" />
     <ClInclude Include="ecn.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="bls_pair.cpp" />
     <ClCompile Include="ecn.cpp" />
     <ClCompile Include="ecn4.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="zzn.cpp" />
     <ClCompile Include="zzn2.cpp" />
     <ClCompile Include="zzn24.cpp" />
