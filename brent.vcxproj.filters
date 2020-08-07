@@ -69,6 +69,12 @@
     <ClInclude Include="zzn24.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="zzn3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ecn3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="big.cpp">

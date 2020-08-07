@@ -144,6 +144,7 @@
     <ClInclude Include="ecdh.h" />
     <ClInclude Include="ecn.h" />
     <ClInclude Include="ecn2.h" />
+    <ClInclude Include="ecn3.h" />
     <ClInclude Include="ecn4.h" />
     <ClInclude Include="ecn6.h" />
     <ClInclude Include="ecn8.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="zzn12a.h" />
     <ClInclude Include="zzn2.h" />
     <ClInclude Include="zzn24.h" />
+    <ClInclude Include="zzn3.h" />
     <ClInclude Include="zzn4.h" />
     <ClInclude Include="zzn8.h" />
   </ItemGroup>
