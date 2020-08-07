@@ -53,19 +53,19 @@ Big X;
 
 void keygenBLS()
 {
-	//G2 Q, V;
+    //G2 Q, V;
     //Big s;
-	// Create system-wide G2 constant
-	pfc.random(Q);
+    // Create system-wide G2 constant
+    pfc.random(Q);
 
-	pfc.random(s);    // private key
-	printf("privatekey: %d\n", s);
-	V = pfc.mult(Q, s);  // public key
-	printf("publickey: %d\n", V);
+    pfc.random(s);    // private key
+    printf("privatekey: %d\n", s);
+    V = pfc.mult(Q, s);  // public key
+    printf("publickey: %d\n", V);
 
 }
 
-void signBLS(unsigned char *plain,int *lsb)
+void signBLS(unsigned char* plain, int* lsb)
 {
     //G1 S, R;
     //Big X;
@@ -77,7 +77,7 @@ void signBLS(unsigned char *plain,int *lsb)
     cout << "Signature= " << lsb << " " << X << endl;
 }
 
-void vertifyBLS(unsigned char *plain, int *lsb)
+void vertifyBLS(unsigned char* plain, int* lsb)
 {
     if (!S.g.set(X, 1 - *lsb))
     {
@@ -105,11 +105,28 @@ void vertifyBLS(unsigned char *plain, int *lsb)
 
 int main()
 {
+    clock_t start, finish;
+    double duration;
+
     unsigned char tx[5000] = "Be there or be square!"; //待签名明文
     int etx[4000]; //签名信息
     unsigned char mtx[5000] = "0"; //解密
-	keygenBLS();
-    signBLS(tx,etx);
-    vertifyBLS(mtx,etx);
-	return 0;
+    
+    start = clock();
+    keygenBLS();
+    finish = clock();
+    duration = (double)(finish - start) / CLOCKS_PER_SEC;
+    printf("KeyGen: %f seconds\n", duration);
+
+    start = clock();
+    signBLS(tx, etx);
+    finish = clock();
+    duration = (double)(finish - start) / CLOCKS_PER_SEC;
+    printf("SignBLS: %f seconds\n", duration);
+
+
+
+    vertifyBLS(mtx, etx);
+
+    return 0;
 }
